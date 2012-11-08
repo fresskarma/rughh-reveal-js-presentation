@@ -97,18 +97,17 @@ Reveal.js doesn't _rely_ on any third party scripts to work but a few optional l
 ```javascript
 Reveal.initialize({
 	dependencies: [
-		// Syntax highlight for <code> elements
-		{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
 		// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } }
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 		// Interpret Markdown in <section> elements
-		{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		// Syntax highlight for <code> elements
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 		// Zoom in and out with Alt+click
-		{ src: 'plugin/zoom-js/zoom.js', condition: function() { return !!document.body.classList; } },
-		// Speaker notes support
-		{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-		{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		// Speaker notes
+		{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 	]
 });
 ```
@@ -133,6 +132,8 @@ Reveal.up();
 Reveal.down();
 Reveal.prev();
 Reveal.next();
+Reveal.prevFragment();
+Reveal.nextFragment();
 Reveal.toggleOverview();
 
 // Retrieves the previous and current slide elements
@@ -174,6 +175,34 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 } );
 ```
 
+### Internal links
+
+It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (```<section id="some-slide">```):
+
+```html
+<a href="#/2/2">Link</a>
+<a href="#/some-slide">Link</a>
+```
+### Fullscreen mode
+Just press »F« on your keyboard to show your presentation in fullscreen mode. Press the »ESC« key to exit fullscreen mode.
+
+### Fragments
+Fragments are used to highlight individual elements on a slide. Every elmement with the class ```fragment``` will be stepped through before moving on to the next slide. Here's an example: http://lab.hakim.se/reveal-js/#/16
+
+The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment:
+
+```html
+<section>
+	<p class="fragment grow">grow</p>
+	<p class="fragment shrink">shrink</p>
+	<p class="fragment roll-in">roll-in</p>
+	<p class="fragment fade-out">fade-out</p>
+	<p class="fragment highlight-red">highlight-red</p>
+	<p class="fragment highlight-green">highlight-green</p>
+	<p class="fragment highlight-blue">highlight-blue</p>
+</section>
+```
+
 ### Fragment events
 
 When a slide fragment is either shown or hidden reveal.js will dispatch an event.
@@ -187,14 +216,6 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
 } );
 ```
 
-### Internal links
-
-It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (```<section id="some-slide">```):
-
-```html
-<a href="#/2/2">Link</a>
-<a href="#/some-slide">Link</a>
-```
 
 ## PDF Export
 
@@ -210,27 +231,38 @@ Here's an example of an exported presentation that's been uploaded to SlideShare
 
 ![Chrome Print Settings](https://s3.amazonaws.com/hakim-static/reveal-js/pdf-print-settings.png)
 
+
 ## Speaker Notes
 
-If you're interested in using speaker notes, reveal.js comes with a Node server that allows you to deliver your presentation in one browser while viewing speaker notes in another. 
+reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven't written any notes. Append ```?notes``` to presentation URL or press the 's' key on your keyboard to open the notes window.
 
-To include speaker notes in your presentation, simply add an `<aside class="notes">` element to any slide. These notes will be hidden in the main presentation view.
+By default notes are written using standard HTML, see below, but you can add a ```data-markdown``` attribute to the ```<aside>``` to write them using Markdown.
 
-It's also possible to write your notes with Markdown. To enable Markdown, add the ```data-markdown``` attribute to your note ```<aside>``` elements.
+```html
+<section>
+	<h2>Some Slide</h2>
 
-You'll also need to [install Node.js](http://nodejs.org/); then, install the server dependencies by running `npm install`.
+	<aside class="notes">
+		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+	</aside>
+</section>
+```
 
-Once Node.js and the dependencies are installed, run the following command from the root directory:
+## Server Side Speaker Nodes
 
-		node plugin/speakernotes
+In some cases it can be desirable to run notes on a separate device from the one you're presenting on. The Node.js-based notes plugin lets you do this using the same note definitions as its client side counterpart. Include the requried scripts by adding the following dependencies:
 
-By default, the slides will be served at [localhost:1947](http://localhost:1947).
+```
+{ src: '/socket.io/socket.io.js', async: true },
+{ src: 'plugin/notes-server/client.js', async: true }
+```
 
-You can change the appearance of the speaker notes by editing the file at `plugin/speakernotes/notes.html`.	
+Then:
 
-### Known Issues
+1. Install [Node.js](http://nodejs.org/)
+2. Run ```npm install```
+3. Run ```node plugin/notes-server```
 
-- The notes page is supposed to show the current slide and the next slide, but when it first starts, it always shows the first slide in both positions. 
 
 ## Folder Structure
 - **css/** Core styles without which the project does not function
