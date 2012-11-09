@@ -56,3 +56,115 @@ section.past #wrapper p#ruby-three-d.three-d-text {
 
 }
 
+
+
+
+
+div.centerVertically {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    -webkit-box-pack: center;
+}
+
+
+
+
+
+.reveal section img {
+  margin: 15px;
+  background: none;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #3b759e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+
+
+/*
+ * Batman slide
+ */
+
+section #batman-slide img {
+    margin-top: 30px;
+    -webkit-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -moz-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -ms-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+     -o-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */
+
+    -webkit-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */
+}
+
+section.future #batman-slide img {
+    margin-top: 5000px;
+}
+
+
+
+/*
+ * Beating heart
+ */
+
+@-webkit-keyframes beating {
+    0% { font-size: 100%; }
+    10% { font-size: 100%; }
+    20% { font-size: 100%; }
+    30% { font-size: 100%; }
+    40% { font-size: 100%; }
+    50% { font-size: 100%; }
+    60% { font-size: 100%; }
+    70% { font-size: 100%; }
+    80% { font-size: 100%; }
+    90% { font-size: 100%; }
+    100% { font-size: 130%; }
+}
+
+.beating {
+    display:inline-block;
+    width: 28px;
+    text-align: center;
+
+    /*font-size: 130% !important;*/
+
+
+    -webkit-animation: beating 1.2s infinite linear ;
+
+    /*-webkit-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -moz-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -ms-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+     -o-transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        transition: all 2000ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+    -webkit-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); */
+}
+
+
+
+

@@ -38,13 +38,122 @@
 
 
 
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section >
+					<div class="centerVertically">
+						<h1>Reveal.js</h1>
+						<h3>HTML Presentations Made Easy</h3>
+						<p>
+							<small>Lucas Jenß</a> / <a href="http://twitter.com/x3rames">@x3rames</a></small>
+						</p>
+					</div>
 				</section>
+
+				<!-- TODO: was hier? author? -->
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						Reveal.js ist eine Präsentations-"Framework"
+
+						basierend auf HTML5/CSS3/JavaScript
+					</div>
+				</section>
+
+
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						<p><b>Frage:</b> Was ist <i>plötzlich</i> verkehrt an Keynote/Powerpoint?</p>
+						<br/>
+						<br/>
+						<p class="fragment"><b>Antwort:</b> Nichts!<small>1</small></p>
+					</div>
+				</section>
+
+
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						<small>1</small> Schon immer doof:
+
+						<br/>
+
+						* Propietäre Software und Dateiformat
+						* Schlecht versionierbar
+						* Installation notwendig
+						* Vergleichsweise unflexibel
+						* Kostenpflichtig
+
+					</div>
+				</section>
+
+
+
+
+				<section>
+					<h2>Zielgruppe</h2>
+
+					<div class="centerVertically" data-markdown>
+						Primär: **Entwickler**
+
+						<small>
+							Sekundär: Rest der Welt (mit WYSIWYG!)
+						</small>
+					</div>
+				</section>
+
+
+
+				<section>
+					<div id="batman-slide" class="centerVertically" data-markdown>
+						## Noch mehr HTML/CSS?!?
+						![](images/batman_is_shocked.png)
+					</div>
+				</section>
+
+
+
+				<section>
+					<div id="batman-slide">
+						<h2>Noch mehr HTML/CSS?!?</h2>
+						<div data-markdown class="centerVertically">
+							Ja, denn
+
+							* Keine Cross-Browser-Optimierung
+							* Mit den neusten Browser-Features spielen
+							* u.v.m.
+						</div>
+					</div>
+				</section>
+
+
+
+				<section>
+					<div class="centerVertically">
+						<h1>23% Cooler</h1>
+						<h5>als herkömmliche Waschmittel</h5>
+						<img src="images/gangnamtocat.png" style="margin-left: -80px"/>
+					</div>
+				</section>
+
+
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						# Features
+					</div>
+				</section>
+
+
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						## Versionierbar
+
+						<small>Disclaimer: Ich <span style="color:red;" class="beating">♥</span> Versionierung</small>
+					</div>
+				</section>
+
+
 
 				<!--<section>
 					<h2>CSS Fragments</h2>
@@ -374,11 +483,11 @@ function linkify( selector ) {
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
 
 				// Optional libraries used to extend on reveal.js
