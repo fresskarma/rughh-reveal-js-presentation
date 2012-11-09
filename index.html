@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/tomorrow-night-eighties.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -193,6 +193,76 @@
 				</section>
 
 
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						<script type="text/template">
+							## Slides in Markdown
+
+							<small>Disclaimer: Ich <span style="color:red;" class="beating">♥</span> auch Markdown</small>
+
+								<section data-markdown>
+									## Slide Headline
+
+									* Really
+									* **Important**
+									* Stuff
+								</section>
+						</script>
+					</div>
+				</section>
+
+
+				<section>
+
+					<div class="centerVertically" data-markdown>
+						## Syntax Highlighting
+						### in Keynote
+
+						<br/>
+
+						1. Textmate "Copy-as-RTF" Bundle herunterladen
+						1. Auf das gewünschte Colortheme wechseln
+						1. Gewünschtes Code-Snippet kopieren
+						1. "Copy-as-RTF" benutzen
+						1. In Keynote einfügen
+
+						<br/>
+
+						Bei Korrektur, Goto 2
+					</div>
+				</section>
+
+
+				<section>
+					<div class="centerVertically" data-markdown>
+						<script type="text/template">
+## Syntax Highlighting
+### in Reveal.js
+
+<br/>
+
+1. Code einfügen
+
+<!-- -->
+
+	module ABC::DEF
+		include Comparable
+
+		# @param test
+		# @return [String] nothing
+		def foo(test)
+			Thread.new do |blockvar|
+				# Do stuff
+			end.join
+		end
+
+		def [](index) self[index] end
+		def ==(other) other == self end
+	end
+						</script>
+					</div>
+				</section>
 
 
 
