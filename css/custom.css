@@ -1,0 +1,58 @@
+#wrapper {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Yanone Kaffeesatz", "Lucida Grande", Lucida, Verdana, sans-serif;
+    margin: 0 auto;
+    width: 600px;
+    padding: 7em 0;
+    background: url(bg.jpg) no-repeat center center;
+    border-radius: 4px;
+    -webkit-perspective: 465;
+    -moz-perspective: 465;
+    -ms-perspective: 465;
+    -o-perspective: 465;
+    perspective: 465;
+}
+
+p#ruby-three-d {
+    opacity: 1;
+    font-size: 2em;
+    margin: 0;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-shadow: rgba(0,0,0,0.1) 0 20px 80px;
+
+    -webkit-transition: all 1000ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+   -moz-transition: all 1000ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -ms-transition: all 1000ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+     -o-transition: all 1000ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        transition: all 1000ms cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+
+-webkit-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+   -moz-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+
+    margin-left: 47px;
+
+
+
+}
+
+#wrapper p#ruby-three-d.three-d-text {
+    -webkit-transform: rotate(7.5deg) rotateX(15deg) skewX(-5deg);
+    color: red;
+
+    text-shadow:0px 0px 0 rgb(231,-24,27),1px 1px 0 rgb(216,-39,12),2px 2px 0 rgb(202,-53,-2),3px 3px 0 rgb(187,-68,-17),4px 4px 0 rgb(173,-82,-31),5px 5px 0 rgb(158,-97,-46), 6px 6px 0 rgb(144,-111,-60),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+    text-indent: 0.3em;
+}
+
+section.past #wrapper p#ruby-three-d.three-d-text {
+    opacity: 0;
+    -webkit-transform: rotate(7.5deg) rotateX(720deg) skewX(-5deg) translateZ(500px);
+
+}
+
