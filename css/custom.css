@@ -153,3 +153,176 @@ section.future #batman-slide img {
 
 
 
+/*
+ * CSS Ring
+ */
+
+@-webkit-keyframes roundandround {
+  to {
+    -webkit-transform: rotateX(720deg) rotateY(720deg);
+  }
+}
+
+@-webkit-keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+section .scene {
+  display: none;
+}
+
+section .scene ul {
+  list-style-type: none;
+}
+
+section.present .scene {
+  display: block;
+  width:650px;
+  height:650px;
+  margin:2% auto;
+  -webkit-perspective: 1000px;
+}
+section.present .wrapper {
+  width:100%;
+  height:100%;
+  -webkit-transform: rotateX(45deg) rotateY(45deg);
+  -webkit-transform-style: preserve-3d;
+}
+section.present  .ball {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin:0 auto;
+  -webkit-transform-style:  preserve-3d;
+  -webkit-animation: roundandround 20s 1.3s infinite linear ;
+}
+section.present .ball .ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border:6px;
+  border-style: dashed;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: show 0.75s forwards ease-in-out;
+}
+
+section.present .ring:nth-child(1) {
+  color:#8df435;
+  -webkit-transform: rotateY(4deg);
+  -webkit-animation-delay: 0s;
+}
+section.present .ring:nth-child(2) {
+  color:#a8e526;
+  -webkit-transform: rotateY(8deg);
+  -webkit-animation-delay: 0.1s;
+}
+section.present .ring:nth-child(3) {
+  color:#c2d11c;
+  -webkit-transform: rotateY(12deg);
+  -webkit-animation-delay: 0.2s;
+}
+section.present .ring:nth-child(4) {
+  color:#c8cb1b;
+  -webkit-transform: rotateY(16deg);
+  -webkit-animation-delay: 0.3s;
+}
+section.present .ring:nth-child(5) {
+  color:#deb21a;
+  -webkit-transform: rotateY(20deg);
+  -webkit-animation-delay: 0.4s;
+}
+section.present .ring:nth-child(6) {
+  color:#ef9621;
+  -webkit-transform: rotateY(24deg);
+  -webkit-animation-delay: 0.5s;
+}
+section.present .ring:nth-child(7) {
+  color:#f29122;
+  -webkit-transform: rotateY(28deg);
+  -webkit-animation-delay: 0.6s;
+}
+section.present .ring:nth-child(8) {
+  color:#fb7430;
+  -webkit-transform: rotateY(32deg);
+  -webkit-animation-delay: 0.7s;
+}
+section.present .ring:nth-child(9) {
+  color:#fe5944;
+  -webkit-transform: rotateY(36deg);
+  -webkit-animation-delay: 0.8s;
+}
+section.present .ring:nth-child(10) {
+  color:#fe5548;
+  -webkit-transform: rotateY(40deg);
+  -webkit-animation-delay: 0.9s;
+}
+section.present .ring:nth-child(11) {
+  color:#f83d61;
+  -webkit-transform: rotateY(44deg);
+  -webkit-animation-delay: 1s;
+}
+section.present .ring:nth-child(12) {
+  color:#ec2b7d;
+  -webkit-transform: rotateY(48deg);
+  -webkit-animation-delay: 1.1s;
+}
+section.present .ring:nth-child(13) {
+  color:#e82983;
+  -webkit-transform: rotateY(52deg);
+  -webkit-animation-delay: 1s;
+}
+section.present .ring:nth-child(14) {
+  color:#d41e9f;
+  -webkit-transform: rotateY(56deg);
+  -webkit-animation-delay: 0.9s;
+}
+section.present .ring:nth-child(15) {
+  color:#bd1aba;
+  -webkit-transform: rotateY(60deg);
+  -webkit-animation-delay: 0.8s;
+}
+section.present .ring:nth-child(16) {
+  color:#b81ac0;
+  -webkit-transform: rotateY(64deg);
+  -webkit-animation-delay: 0.7s;
+}
+section.present .ring:nth-child(17) {
+  color:#9c1fd7;
+  -webkit-transform: rotateY(68deg);
+  -webkit-animation-delay: 0.6s;
+}
+section.present .ring:nth-child(18) {
+  color:#802aea;
+  -webkit-transform: rotateY(72deg);
+  -webkit-animation-delay: 0.5s;
+}
+section.present .ring:nth-child(19) {
+  color:#7a2dee;
+  -webkit-transform: rotateY(76deg);
+  -webkit-animation-delay: 0.4s;
+}
+section.present .ring:nth-child(20) {
+  color:#5f40f9;
+  -webkit-transform: rotateY(80deg);
+  -webkit-animation-delay: 0.3s;
+}
+section.present .ring:nth-child(21) {
+  color:#4657fe;
+  -webkit-transform: rotateY(84deg);
+  -webkit-animation-delay: 0.2s;
+}
+section.present .ring:nth-child(22) {
+  color:#425cfe;
+  -webkit-transform: rotateY(88deg);
+  -webkit-animation-delay: 0.1s;
+}
+section.present .ring:nth-child(23) {
+  color:#2f77fb;
+  -webkit-transform: rotateY(92deg);
+  -webkit-animation-delay: 0s;
+}
