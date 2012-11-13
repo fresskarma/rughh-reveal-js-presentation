@@ -200,7 +200,8 @@ section.present .scene {
   background: black;
   top: 210px;
   position: absolute;
-  left: 330px;
+  left: 50%;
+  margin-left: -124px;
   padding-top: 12px;
 }
 
