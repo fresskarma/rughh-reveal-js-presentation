@@ -403,3 +403,13 @@ section.present .scene-wrapper {
   left: -1104px;
   top: -3418px;
 }
+
+
+
+/*
+ * general dimension styling
+ */
+
+.reveal section li {
+  padding-bottom: 15px;
+}
