@@ -200,7 +200,7 @@ section.present .scene {
   background: black;
   top: 210px;
   position: absolute;
-  left: 286px;
+  left: 330px;
   padding-top: 12px;
 }
 
@@ -347,3 +347,19 @@ section.present .ring:nth-child(23) {
   -webkit-animation-delay: 0s;
 }
 
+
+
+
+/*
+ * threejs demo stuff
+ */
+
+.scene-wrapper {
+  -webkit-animation-delay: 1s;
+  -webkit-transition: all 1s linear;
+  opacity: 0;
+}
+
+section.present .scene-wrapper {
+  opacity: 1;
+}
