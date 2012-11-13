@@ -363,3 +363,42 @@ section.present .ring:nth-child(23) {
 section.present .scene-wrapper {
   opacity: 1;
 }
+
+
+
+/*
+ * svg demo
+ */
+
+
+.svgdemo {
+  overflow: hidden;
+  position: relative;
+  height: 525px;
+  width: 100%;
+}
+
+.reveal section .svgdemo img {
+  max-width: none;
+  max-height: none;
+  -webkit-transition: all 2s ease-in-out;
+  position: absolute;
+}
+
+.svgdemo.svgstep1 img {
+  width: 300px;
+  left: 290px;
+  top: 0;
+}
+
+.svgdemo.svgstep2 img {
+  width: 1500px;
+  left: 0;
+}
+
+
+.svgdemo.svgstep3 img {
+  width: 2510px;
+  left: -1104px;
+  top: -3418px;
+}
